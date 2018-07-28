@@ -27,18 +27,18 @@ pipeline {
       }
     }
     stage('Unit Tests') {
-      agent {
+      /*agent {
         label 'apache'
-      }
+      }*/
       steps {
         sh 'ant -f test.xml -v'
         junit 'reports/result.xml'
       }
     }
     stage('build') {
-      agent {
+      /*agent {
         label 'apache'
-      }
+      }*/
       steps {
         sh 'ant -f build.xml -v'
       }
